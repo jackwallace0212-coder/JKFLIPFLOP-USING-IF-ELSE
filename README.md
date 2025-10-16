@@ -36,13 +36,58 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 /* write all the steps invloved */
 
+1.Type the program in Quartus software.
+
+2.Compile and run the program.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram.
+
 **PROGRAM**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
 
+module jkff(j,k,clk,q,qbar);
+
+input j,k,clk;
+
+output reg q,qbar;
+
+initial
+
+begin
+
+q=1'b0;
+
+q=1'b1;
+
+end
+
+always @(posedge clk)
+
+begin
+
+q<=(j&~q)|(~k&q);
+
+qbar<=~q;
+
+end
+
+endmodule
+
 **RTL LOGIC FOR FLIPFLOPS**
+
+<img width="854" height="294" alt="image" src="https://github.com/user-attachments/assets/b77a844c-8499-4733-a647-2a72f7e6c21d" />
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+<img width="1310" height="304" alt="image" src="https://github.com/user-attachments/assets/ac0d72be-5a39-4ad2-bc14-de52df725364" />
+
+
 **RESULTS**
+
+Thus the Serial-in and Serial-out Register is designed and is verified usingQuartus software.
